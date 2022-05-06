@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <style>
+        body{
+            background-color:rgb(111, 111, 152) ;
+            color: white;
+            font: bold 20pt Arial;
+            }
+        h1{
+            color: yellow;
+          }    
+        p{
+            color: orange
+        }  
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script>
+        // Vamos pedir dois números ao usuário
+        var numero1 = window.prompt('Digite um número: ') // Recebe um valor string
+        var numero2 = window.prompt('Digite outro nome: ') // Recebe um valor string
+        /* 
+        Agora vamos somá-los e mostrar o resultado...
+        Mas primeiro precisamos tranformar o tipo das variaveis de string para número.
+        Para isso, nós temos;
+        variavel = Number(variavel)
+        Caso a gente queira tranformar para string novamente, 
+        variavel = String(variavel)
+        */
+        numero1 = Number(numero1) // Transforma para número
+        numero2 = Number(numero2)
+        var soma = numero1 + numero2
+        window.alert(`A soma entre ${numero1} e ${numero2} é ${soma}.`) // Usando template string
+        /*
+        Outra forma de escrever o comando anterior é usando concatenação;
+        window.alert('A soma entre ' + numero1 + ' e ' + numero2 + ' é ' + soma + '.')
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de letras no seu nome</title>
+    <style>
+        body{
+            background-color: rgb(130, 206, 181); 
+            color: blueviolet; 
+            font: normal 20 pt Arial;
+            }
+        h1{
+          color: blueviolet;  
+          }
+    </style>    
+</head>
+<body>
+    <h1>
+        Contador de letras no seu nome
+    </h1>
+    <script>
+        // Criando uma variável para receber seu nome
+        var nome = window.prompt('Qual é o seu nome? ')
+        // Escreva no documento o indicado
+        document.write(`Olá, <strong>${nome.toUpperCase()}</strong>! Seu nome possui ${nome.length} letras.<br/>`)
+    </script>
+</body>
+</html>
