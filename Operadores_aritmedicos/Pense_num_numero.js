@@ -20,10 +20,13 @@ numero_modificado *= 2
 console.log("3°) Tire 4 unidades do número anterior.\n")
 console.log(`${numero_modificado} - 4 = ${numero_modificado-4}\n`)
 numero_modificado -= 4
+// 4°) passo
 console.log("4°) Divida o resultado por 2.\n")
 console.log(`${numero_modificado}/2 = ${numero_modificado/2}\n`)
 numero_modificado /= 2
+// 5°) passo
 console.log("5°) Do anterior, diminua pelo número escolhido por você.\n")
 console.log(`${numero_modificado} - ${numero_escolhido} = ${numero_modificado - numero_escolhido}\n`)
 numero_modificado -= numero_escolhido
+// Resultado
 console.log(`O resultado final é ${numero_modificado}!`)
