@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar pdf</title>
+    <style>
+        body{
+            background-color: azure;
+            text-align: center;
+        }
+        p{
+            color: brown;
+            font: 12pt Arial;
+            font-weight: bold;
+        }
+        h1{
+            background-color: brown;
+            color: azure;
+            font: Arial;    
+        }
+        h2{
+            font: Arial;
+        }
+    </style>    
+</head>
+<body>
+    <h1>Detalhes do seu pedido</h1>
+    <div id = "dados">
+        <h2><span>&#8226;</span> Dados do comprador: </h2>
+        <p>Nome: César da Silva Filho</p>
+        <p>Idade: 35 anos</p>
+        <p>CPF: XXXXXXXXX-XX</p>
+        <P>Nome da mãe: Fátima berdardes da Silva</p>
+        <p>CEP de residência: 12500-240</p>
+        <h2><span>&#8226;</span> Dados da compra: </h2>
+        <p>N° do pedido: 20221212034-56</p>  
+        <p>Subtotal do(s) item(ns): R$ 278,00</p>
+        <p>Frete e manuseio: R$ 0,00</p>
+        <p>Total: R$ 278,00</p>
+        <p>Total geral: R$ 278,00</p>
+    </div>
+    <p>
+        <input type = "button" value = "Imprimir" onclick = "funcao_pdf()" style = "color: azure; background-color: brown; font: 12pt Arial; font-weight: bold; border-style: hidden;">
+    </p>    
+</body>
+<script>
+    window.alert("Obrigado por comprar conosco!")
+    // Função geradora de pdf
+    function funcao_pdf() {
+        // Criação de uma variável para armazenar os dados do div
+        var pegar_dados = document.getElementById("dados").innerHTML;
+        // PDF
+        var janela = window.open("", "", "width = 800, height = 600");
+        janela.document.write("<html><head>");
+        janela.document.write("<title></title><style>body{text-align: center}</style></head>");
+        janela.document.write("<body>");
+        janela.document.write(pegar_dados);
+        janela.document.write("</body></html>");        
+        janela.document.close();
+        janela.print();    
+    }
+</script>
