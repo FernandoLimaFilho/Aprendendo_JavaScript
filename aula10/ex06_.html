@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Eventos de Mouse</title>
+    <style>
+        div#area {
+            font: bold 50pt 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+            background-color: green;
+            color: white;
+            width: 500px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id = "area">
+        Interaja...
+    </div>  
+    <script>
+        var divarea = window.document.querySelector("div#area");
+        divarea.addEventListener("click", clicar)
+        divarea.addEventListener("mouseenter", entrar)
+        divarea.addEventListener("mouseout", sair)
+        function clicar() {
+            divarea.innerText = "Clicou!"
+            divarea.style.background = "red"
+            divarea.style.color = "white"
+        }
+        function entrar() {
+            divarea.innerText = "Entrou!"
+            divarea.style.color = "red"
+        } 
+        function sair() {
+            divarea.innerText = "Interaja..."
+            divarea.style.background = "green"
+            divarea.style.color = "white"
+        }
+    </script>
+</body>
+</html>
