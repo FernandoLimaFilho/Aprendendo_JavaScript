@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generating PDF file with JavaScript</title>
+    <style>
+        body {
+            background-color: rgb(242, 234, 227);
+        }
+        h1 {
+            color: rgb(200, 104, 26);
+            font: bold 40pt 'Georgia', 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        h2 {
+            color: rgb(200, 104, 26);
+            font: bold 20pt 'Georgia', 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        p {
+            font: 14pt 'Times New Roman', Times, serif;
+        }
+        hr {
+            color: rgb(200, 104, 26);
+        }
+    </style>
+</head>
+<body>    
+    <div id = "dados_do_pdf">
+        <h1>
+            Detalhes do pedido
+        </h1> 
+        <p>
+            <strong>Pedido feito:</strong> 27 de março de 2022 </br>
+            <strong>Número do pedido:</strong> 703-7911832-4231760 </br>
+            <strong>Total do pedido: R$ 278,00</strong>
+        </p>  
+        <hr color= "" style="border-width: 3px;">
+        <h2>
+            Itens pedidos
+        </h2>  
+        <p>
+            1 unidade(s) de: Neurociências: Desvendando o Sistema Nervoso, Bear, Mark F.
+        </p>
+        Vendido por: Amazon Serviços de Varejo do Brasil, Ltda. </br>
+        Condição: Novo
+        <hr color= "" style = "border-width: 3px;">
+        <h2>
+            Endereço de entrega
+        </h2>   
+        <p>
+            <strong>Responsável:</strong> Maria de Fátima Bernardes </br>
+            <strong>CEP: </strong> 69028-111 </br>
+            <strong>Estado: </strong> Amazonas </br>
+            <strong>Cidade: </strong> Manaus </br>
+            <strong>Bairro: </strong> Flores </br>
+            <strong>Rua: </strong> Dom Lourenço da Costa </br>
+            <strong>Casa: </strong> 747 </br>
+        </p> 
+        <hr color= "" style="border-width: 3px;">
+        <h2>
+            Informações do pagamento
+        </h2>   
+        <p>
+            <strong>Método de pagamento: </strong> </br>
+            (Crédito) Visa | Últimos dígitos: xxxx </br>
+            Em 7x de R$ 39,74 sem juros </br>
+            </br>
+            <strong>Endereço de cobrança: </strong> </br>
+            <strong>CEP: </strong> 69028-111 </br>
+            <strong>Estado: </strong> Amazonas </br>
+            <strong>Cidade: </strong> Manaus </br>
+            <strong>Bairro: </strong> Flores </br>
+            <strong>Rua: </strong> Dom Lourenço da Costa </br>
+            <strong>Casa: </strong> 747 </br>
+        </p>     
+    </div>    
+    <hr color = "" style="border-width: 3px;">
+    <p align = "center">
+        <input type = "button" value = "Obter PDF" onclick = "pdf()" style = "color: rgb(242, 234, 227); background-color: rgb(200, 104, 26); font: bold 14pt 'Times New Roman', Times, serif; border-style: hidden;">
+    </p>    
+</body>  
+<script>
+    // Função para gerar o pdf
+    function pdf() {
+        // Criação de uma variável para armazenar os dados do div
+        var pegar_dados = window.document.querySelector("div#dados_do_pdf").innerHTML; 
+        // Criação de uma variável para realizar alterações no pdf
+        var janela = window.open("", "", "width = 800 height = 600");
+        janela.document.write("<html><head>");
+        janela.document.write("<title></title><style>h1 {color: rgb(200, 104, 26); font: bold 40pt 'Georgia', 'Times New Roman', Times, serif; text-align: center;} h2 {color: rgb(200, 104, 26); font: bold 20pt 'Georgia', 'Times New Roman', Times, serif; text-align: center;} p {font: 14pt 'Times New Roman', Times, serif;} hr {color: rgb(200, 104, 26);} </style></head>");
+        janela.document.write("<body>");
+        janela.document.write(pegar_dados);
+        janela.document.write("</body></html>"); 
+        janela.document.close();
+        janela.print(); 
+    }
+</script>    
+</html>
