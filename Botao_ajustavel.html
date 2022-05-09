@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão ajustável</title>
+    <style>
+        p {
+        font: bold 15pt Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        border: 2px solid rgba(0,0,200,0.6);
+        background: rgba(0,0,200,0.3);
+        color: rgba(255, 0, 0, 0.6);
+        box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+        border-radius: 10px;
+        padding: 6px 14px;
+        display: inline-block;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Jogador: Clique para inserir um nome
+    <p>   
+    <script>
+        var p1 = window.document.querySelector("p");
+        p1.addEventListener("click", clicar);
+        function clicar() {
+            var nome = prompt("Insira um nome: ");
+            p1.innerText = "Jogador: " + nome ;
+        }
+    </script>   
+</body>
+</html>
