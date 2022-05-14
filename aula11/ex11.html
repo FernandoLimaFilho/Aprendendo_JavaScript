@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro ou estrangeiro</title>
+</head>
+<body>
+    Você vive em <input type = "text" name = "pais" id = "pais">
+    <input type = "button" value = "Resultado" onclick = "resultado()">
+    <div id = "res">
+    </div>
+    <script>
+        function resultado() {
+            var pais = window.document.querySelector("input#pais");
+            var res2 = window.document.querySelector("div#res");
+            pais = String(pais.value).toUpperCase();
+            if (pais == "BRASIL") {
+                res2.innerHTML = "</br>Você é brasileiro!";
+            } else if (pais == "BRAZIL") {
+                res2.innerHTML = "</br>Você é brasileiro!";
+            } else {
+                res2.innerHTML = "</br> Você é estrangeiro!";
+            }
+        }
+    </script>    
+</body>
+</html>
